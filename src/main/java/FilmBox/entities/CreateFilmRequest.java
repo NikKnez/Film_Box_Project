@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class CreateMovieRequest {
+public class CreateFilmRequest {
 
     @Schema(example = "tt0111161")
     @NotBlank
