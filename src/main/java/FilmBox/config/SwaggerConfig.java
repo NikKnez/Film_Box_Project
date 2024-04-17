@@ -14,7 +14,7 @@ public class SwaggerConfig {
     @Value("${spring.application.name}")
     private String applicationName;
 
-    private static final String BEARER_KEY_SECURITY_SCHEME = "bearer-key";
+    public static final String BEARER_KEY_SECURITY_SCHEME = "bearer-key";
 
     @Bean
     public OpenAPI customOpenAPI() {
