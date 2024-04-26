@@ -22,11 +22,15 @@ import java.util.stream.Collectors;
 @Component
 public class TokenProvider {
 
+    public static final String TOKEN_TYPE = "JWT";
+    public static final String TOKEN_ISSUER = "order-api";
+    public static final String TOKEN_AUDIENCE = "order-app";
+
     @Value("${app.jwt.secret}")
-    private String jwtSecret;
+    public String jwtSecret;
 
     @Value("${app.jwt.expiration.minutes}")
-    private Long jwtExpirationMinutes;
+    public Long jwtExpirationMinutes;
 
     public String generate(Authentication authentication) {
         CustomUserDetails user = (CustomUserDetails) authentication.getPrincipal();
@@ -80,7 +84,5 @@ public class TokenProvider {
         return Optional.empty();
     }
 
-    public static final String TOKEN_TYPE = "JWT";
-    public static final String TOKEN_ISSUER = "order-api";
-    public static final String TOKEN_AUDIENCE = "order-app";
+    
 }
